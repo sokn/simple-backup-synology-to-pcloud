@@ -1,0 +1,22 @@
+#!/bin/bash
+NOW=$(date +%m%d%y) 
+BACKUP_PATHS=(
+    "/path_to_backup/
+    # Add more backup paths here
+)
+DES="/path_to_smb_VM/SentToPCloud/${NOW}"
+
+# Create a temporary directory
+#TMP_DIR=$(mktemp -d)
+mkdir temp
+TMP_DIR=temp
+
+# Loop through each backup path
+for BACKUP in "${BACKUP_PATHS[@]}"; do
+    zip -r "$TMP_DIR/tmp.zip" "$BACKUP"
+done
+
+mv "$TMP_DIR/tmp.zip" "$DES.zip"
+
+# Remove the temporary directory
+rmdir "$TMP_DIR"
