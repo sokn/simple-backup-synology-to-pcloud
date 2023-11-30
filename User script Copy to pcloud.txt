@@ -5,6 +5,7 @@ BACKUP_PATHS=(
     # Add more backup paths here
 )
 DES="/path_to_smb_VM/SentToPCloud/${NOW}"
+# synology built-in Hyper backup can not support remote folder
 
 # Create a temporary directory
 #TMP_DIR=$(mktemp -d)

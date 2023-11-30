@@ -34,8 +34,8 @@ def monitor_and_move_loop(src_folder, dest_folder):
 
 # Example Usage
 source_folder = "/path_of_SMB_share"
-destination_folder = "/path_of_home/pCloudDrive/share"
+destination_folder = "/path_of_home/pCloudDrive/backup"
 
 monitor_and_move_loop(source_folder, destination_folder)
 
-#run this as a service
+# run this as a service
